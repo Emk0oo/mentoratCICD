@@ -6,5 +6,5 @@ function error(){
     throw new Error('Not implemented');
 }
 //error();
-//test pushs scommitss MTE-1
+//test pushs scommitss MTE-3
 module.exports = { addition };
