@@ -6,5 +6,5 @@ function error(){
     throw new Error('Not implemented');
 }
 //error();
-//test pushs scommitss MTE-1ss  seje bosse comme gotaga bbbd
+//test pushs scommitss MTE-1
 module.exports = { addition };
