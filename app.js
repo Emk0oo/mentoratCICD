@@ -7,6 +7,5 @@
 function addition(a, b) {
   return a + b;
 }
-// Exporter la fonction pour qu'elle soit accessible dans d'autres fichiers
 
 module.exports = { addition };
