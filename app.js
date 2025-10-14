@@ -7,6 +7,5 @@
 function addition(a, b) {
   return a + b;
 }
-//comment1abbchh
 
 module.exports = { addition };
