@@ -27,13 +27,13 @@ jobs:
 
       - name: Build Docker image
         run: |
-          IMAGE_NAME="${{ secrets.SCW_REGISTRY_ENDPOINT }}/CLOUET-RENAUDIN-JAVOR"
+          IMAGE_NAME="${{ secrets.SCW_REGISTRY_ENDPOINT }}/CLOUET_RENAUDIN_JAVOR"
           IMAGE_TAG="${GITHUB_SHA::7}"  # tag court basé sur le SHA du commit
           docker build -t "$IMAGE_NAME:$IMAGE_TAG" -t "$IMAGE_NAME:latest" .
 
       - name: Push Docker image
         run: |
-          IMAGE_NAME="${{ secrets.SCW_REGISTRY_ENDPOINT }}/CLOUET-RENAUDIN-JAVOR"
+          IMAGE_NAME="${{ secrets.SCW_REGISTRY_ENDPOINT }}/CLOUET_RENAUDIN_JAVOR"
           IMAGE_TAG="${GITHUB_SHA::7}"
           docker push "$IMAGE_NAME:$IMAGE_TAG"
           docker push "$IMAGE_NAME:latest"
