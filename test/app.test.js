@@ -1,6 +1,6 @@
 const { addition } = require('../app');
 
-// Fonction utilitaire pour tester
+// Fonction utilitaire pour tester le code
 function test(description, testFn) {
   try {
     testFn();
