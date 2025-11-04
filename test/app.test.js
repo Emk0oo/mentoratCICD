@@ -22,7 +22,6 @@ function assertEqual(actual, expected) {
 console.log('Tests de la fonction addition\n');
 
 test('addition de deux nombres positifs', () => {
-  throw new Error("fdsfsfds");
   assertEqual(addition(2, 3), 5);
 });
 
