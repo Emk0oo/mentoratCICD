@@ -1,11 +1,5 @@
-/**
- * Additionne deux nombres.
- * @param {number} a - Premier nombre.
- * @param {number} b - Second nombre.
- * @returns {number} - Résultat de a + b.
- */
 function addition(a, b) {
   return a + b;
-}//caca
-
+}
+//test pushs scommitss MTE-1ss  seje bosse comme gotaga bbbdfzfz  
 module.exports = { addition };
