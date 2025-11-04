@@ -6,11 +6,31 @@ on:
       - main  # ajuste ta branche principale ici
 
 jobs:
-  build-and-deploy:
+  test:
     runs-on: ubuntu-latest
 
-    # On ne lance le déploiement que si le message du commit contient #deploy
+    # On ne lance le workflow que si le message du commit contient #deploy
     if: contains(github.event.head_commit.message, '#deploy')
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Run tests
+        run: |
+          npm test
+
+      - name: Tests passed
+        run: echo "✓ Tous les tests sont passés avec succès !"
+
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    needs: test  # Ce job ne s'exécute que si le job 'test' réussit
 
     steps:
       - name: Checkout code
