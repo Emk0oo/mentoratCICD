@@ -4,9 +4,6 @@
   "description": "Projet de démonstration CI/CD avec YouTrack et TeamCity",
   "main": "app.js",
   "scripts": {
-    "test": "jest"
-  },
-  "devDependencies": {
-    "jest": "^29.7.0"
+    "test": "node test/app.test.js"
   }
 }

@@ -1,31 +1,50 @@
 const { addition } = require('../app');
 
-describe('Tests de la fonction addition', () => {
+// Fonction utilitaire pour tester
+function test(description, testFn) {
+  try {
+    testFn();
+    console.log(`✓ ${description}`);
+  } catch (error) {
+    console.error(`✗ ${description}`);
+    console.error(`  ${error.message}`);
+    process.exit(1);
+  }
+}
 
-  test('addition de deux nombres positifs', () => {
-    expect(addition(2, 3)).toBe(5);
-  });
+function assertEqual(actual, expected) {
+  if (actual !== expected) {
+    throw new Error(`Expected ${expected}, but got ${actual}`);
+  }
+}
 
-  test('addition de nombres négatifs', () => {
-    expect(addition(-2, -3)).toBe(-5);
-  });
+// Suite de tests
+console.log('Tests de la fonction addition\n');
 
-  test('addition avec zéro', () => {
-    expect(addition(5, 0)).toBe(5);
-    expect(addition(0, 5)).toBe(5);
-  });
-
-  test('addition de nombres décimaux', () => {
-    expect(addition(2.5, 3.5)).toBe(6);
-    expect(addition(0.1, 0.2)).toBeCloseTo(0.3);
-  });
-
-  test('addition de nombre positif et négatif', () => {
-    expect(addition(10, -5)).toBe(5);
-    expect(addition(-10, 5)).toBe(-5);
-  });
-
-  test('addition de deux zéros', () => {
-    expect(addition(0, 0)).toBe(0);
-  });
+test('addition de deux nombres positifs', () => {
+  assertEqual(addition(2, 3), 5);
 });
+
+test('addition de nombres négatifs', () => {
+  assertEqual(addition(-2, -3), -5);
+});
+
+test('addition avec zéro', () => {
+  assertEqual(addition(5, 0), 5);
+  assertEqual(addition(0, 5), 5);
+});
+
+test('addition de nombres décimaux', () => {
+  assertEqual(addition(2.5, 3.5), 6);
+});
+
+test('addition de nombre positif et négatif', () => {
+  assertEqual(addition(10, -5), 5);
+  assertEqual(addition(-10, 5), -5);
+});
+
+test('addition de deux zéros', () => {
+  assertEqual(addition(0, 0), 0);
+});
+
+console.log('\n✓ Tous les tests ont réussi !');

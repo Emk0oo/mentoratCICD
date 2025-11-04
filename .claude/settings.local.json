@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(npm test:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(if exist package-lock.json del package-lock.json)",
+      "Bash(if exist node_modules rmdir /s /q node_modules)"
     ],
     "deny": [],
     "ask": []
