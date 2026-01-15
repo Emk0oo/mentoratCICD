@@ -9,6 +9,7 @@ function test(description, testFn) {
     console.error(`✗ ${description}`);
     console.error(`  ${error.message}`);
     process.exit(1);
+
   }
 }
 
